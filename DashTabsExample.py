@@ -46,7 +46,7 @@ tab_selected_style = {
 
 # Prepare data
 # Dataset - Save in same directory as the script to avoid using PATH
-df = pd.read_csv('datasetsy/avocado-updated-2020.csv')
+df = pd.read_csv('datasets/avocado-updated-2020.csv')
 
 # Check data
 df.info()

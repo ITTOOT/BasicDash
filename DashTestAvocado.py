@@ -47,7 +47,7 @@ tab_selected_style = {
 
 # Prepare data
 # Dataset - Save in same directory as the script to avoid using PATH
-df = pd.read_csv('datasetsy/avocado-updated-2020.csv')
+df = pd.read_csv('datasets/avocado-updated-2020.csv')
 
 # Check data
 df.info()
@@ -99,6 +99,7 @@ app.layout = html.Div(children=[
     Input(component_id=geo_dropdown, component_property='value')
     )
 # Callback definitions
+# Update graph with the Input value
 def update_graph(selected_geography):
     # Filter inputs
     filtered_df = df[df['geography'] == selected_geography]
@@ -108,7 +109,7 @@ def update_graph(selected_geography):
                        y='average_price',
                        color='type',
                        title=f'Avocado Prices in {selected_geography}')
-    # Return
+    # Return fig to Output
     return line_fig
 # 
 # Render tab bar
